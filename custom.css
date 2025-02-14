@@ -1,0 +1,32 @@
+body {
+    min-height: 100vh;
+    background-color: var(--bs-dark);
+    color: var(--bs-light);
+}
+
+.card {
+    border-color: var(--bs-gray-700);
+    background-color: var(--bs-gray-900);
+}
+
+.story-content {
+    white-space: pre-wrap;
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+}
+
+.navbar {
+    border-bottom: 1px solid var(--bs-gray-700);
+}
+
+.form-control {
+    background-color: var(--bs-gray-800);
+    border-color: var(--bs-gray-700);
+    color: var(--bs-light);
+}
+
+.form-control:focus {
+    background-color: var(--bs-gray-800);
+    border-color: var(--bs-primary);
+    color: var(--bs-light);
+}
