@@ -1,43 +1,48 @@
 # Story Mosaic
 
-Welcome to the Story Mosaic project! This project is a collaborative storytelling platform where users can contribute to an ongoing story, creating a mosaic of narratives.
+Welcome to Story Mosaic, a collaborative storytelling platform where users can create, share, and explore stories together.
+
+## Features
+
+- **Collaborative Writing**: Multiple users can contribute to a single story, making it a true mosaic of ideas.
+- **Story Exploration**: Browse through a diverse collection of stories created by the community.
+- **User Profiles**: Create a profile to showcase your contributions and favorite stories.
+- **Interactive Interface**: Enjoy a user-friendly interface designed to enhance your storytelling experience.
 
 ## Getting Started
 
-To get started with the project, follow these steps:
-
-1. Clone the repository:
-	```sh
-	git clone https://github.com/your-username/story-mosaic.git
+1. **Clone the Repository**:
+	```bash
+	git clone https://github.com/rudrajsurti9/Story-Mosaic.git
 	```
-2. Navigate to the project directory:
-	```sh
-	cd story-mosaic
+2. **Navigate to the Project Directory**:
+	```bash
+	cd Story-Mosaic
 	```
-3. Install the dependencies:
-	```sh
-	npm install
+3. **Install Dependencies**:
+	```bash
+	# Use your preferred package manager to install dependencies
 	```
-
-## Usage
-
-To start the development server, run:
-```sh
-npm start
-```
-
-Open your browser and navigate to `http://localhost:3000` to see the application in action.
+	4. **Run the Application**:
+	```bash
+	python main.py
+	```
 
 ## Contributing
 
-We welcome contributions! Please read our [contributing guidelines](CONTRIBUTING.md) to get started.
+We welcome contributions from the community! To contribute:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bugfix.
+3. Commit your changes and push your branch.
+4. Open a pull request with a detailed description of your changes.
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 ## Contact
 
-If you have any questions or suggestions, feel free to open an issue or contact us at [your-email@example.com](mailto:your-email@example.com).
+For any questions or feedback, please open an issue on the [GitHub repository](https://github.com/rudrajsurti9/Story-Mosaic).
 
-Happy storytelling!
+Thank you for being a part of Story Mosaic!
