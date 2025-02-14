@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-4">
+        <div class="card mb-4">
+            <div class="card-body">
+                <h2 class="card-title">{{ user.username }}</h2>
+                <p class="card-text">
+                    <small class="text-muted">Member since {{ user.created_at.strftime('%B %d, %Y') if user.created_at else 'N/A' }}</small>
+                </p>
+                {% if current_user.is_authenticated and current_user != user %}
+                    {% if user not in current_user.friends.all() %}
+                    <a href="{{ url_for('add_friend', user_id=user.id) }}" class="btn btn-primary">Add Friend</a>
+                    {% else %}
+                    <button class="btn btn-secondary" disabled>Already Friends</button>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-8">
+        <h3 class="mb-4">Stories</h3>
+        {% for story in user.stories %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">{{ story.title }}</h5>
+                <p class="card-text">{{ story.content[:200] }}...</p>
+                <a href="{{ url_for('story', story_id=story.id) }}" class="btn btn-primary">Read More</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title">{{ story.title }}</h1>
+                <div class="mb-3">
+                    <small class="text-muted">
+                        Written by <a href="{{ url_for('profile', username=story.author.username) }}">{{ story.author.username }}</a>
+                        on {{ story.created_at.strftime('%B %d, %Y') }}
+                    </small>
+                </div>
+
+                {% if current_user == story.author or current_user in story.contributors %}
+                <div class="mb-3">
+                    <a href="{{ url_for('edit_story', story_id=story.id) }}" class="btn btn-primary">
+                        <i data-feather="edit-2"></i> Edit Story
+                    </a>
+                </div>
+                {% endif %}
+
+                <div class="story-content mb-4">
+                    {{ story.content | safe }}
+                </div>
+
+                {% if story.author == current_user %}
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Invite Collaborators</h5>
+                        <form method="POST" action="{{ url_for('invite_collaborator', story_id=story.id) }}">
+                            <div class="mb-3">
+                                <select name="friend_id" class="form-select">
+                                    <option value="">Select a friend</option>
+                                    {% for friend in current_user.friends %}
+                                        {% if friend not in story.contributors %}
+                                            <option value="{{ friend.id }}">{{ friend.username }}</option>
+                                        {% endif %}
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Invite</button>
+                        </form>
+                    </div>
+                </div>
+                {% endif %}
+
+                <div class="mt-4">
+                    <h5>Collaborators:</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        {% for contributor in story.contributors %}
+                        <a href="{{ url_for('profile', username=contributor.username) }}" class="badge bg-secondary text-decoration-none">
+                            {{ contributor.username }}
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
